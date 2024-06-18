@@ -1,0 +1,40 @@
+//
+.label {
+  position: relative;
+}
+
+.input[type='radio'] {
+  appearance: none;
+  background: #fff;
+  border: 2px solid #415674;
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 10px;
+  border-radius: 100%;
+  vertical-align: text-bottom;
+  position: relative;
+}
+
+.input[type='radio']::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  top: 0;
+  cursor: pointer;
+}
+
+.input[type='radio']:checked::before {
+  border: 5px solid transparent;
+  border-radius: 100%;
+  background: #4b83fc;
+  margin: 4px;
+}
+
+.input[type='radio']:focus {
+  outline: solid 1px;
+  outline-offset: 2px;
+}

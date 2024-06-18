@@ -1,0 +1,19 @@
+.button {
+  display: inline-block;
+  max-width: 230px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 7px;
+  color: white;
+  background: rgb(49, 48, 48);
+  box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: rgb(0, 0, 0);
+}
+
+.button:active {
+  opacity: 0.7;
+}

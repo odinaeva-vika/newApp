@@ -1,0 +1,13 @@
+.input {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.2);
+
+  &:focus {
+    border: 2px solid black;
+  }
+}
