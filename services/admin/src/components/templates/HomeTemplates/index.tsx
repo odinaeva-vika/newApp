@@ -4,9 +4,16 @@ import { AnimatedModal } from '@/components/organisms/AnimatedModal';
 import { Footer } from '@/components/organisms/Footer/Footer';
 import { Header } from '@/components/organisms/Header/Header';
 import { HomeInner } from '@/components/organisms/HomeInner';
-import { THomePage } from '@/interfaces';
+import { ModalType } from '@/interfaces';
 
-export const HomeTemplates: React.FC<THomePage> = ({ isModalOpen, openModal, closeModal, formType }) => {
+type THomeTemplatesProps = {
+  isModalOpen: boolean;
+  openModal: (type: ModalType) => void;
+  closeModal: () => void;
+  formType: ModalType;
+};
+
+export const HomeTemplates: React.FC<THomeTemplatesProps> = ({ isModalOpen, openModal, closeModal, formType }) => {
   return (
     <div className="wrapper">
       <Header />

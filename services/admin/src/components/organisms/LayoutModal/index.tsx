@@ -1,13 +1,20 @@
 import { FormIn } from '@/components/molecules/Form/FormIn';
 import { FormUp } from '@/components/molecules/Form/FormUp';
 import { ANIMATION_TIME } from '@/helpers/constants';
-import { TLayoutModal } from '@/interfaces';
+import { ModalType } from '@/interfaces';
 import { setAnimationIn } from '@/store/animationIn/animationInSlice';
 import { RootState } from '@/store/store';
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import styles from './LayoutModal.module.scss';
+
+type TLayoutModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  onExited: () => void;
+  formType: ModalType;
+};
 
 const overlayAnimation = {
   enter: styles.overlayEnter,
@@ -23,8 +30,8 @@ const contentAnimation = {
   exitActive: styles.contentExitActive,
 };
 
-export const LayoutModal: React.FC<TLayoutModal> = ({ onClose, isOpen, onExited, formType }) => {
-  const { animationIn } = useSelector((state: RootState) => state.animationInSlice);
+export const LayoutModal: React.FC<TLayoutModalProps> = ({ onClose, isOpen, onExited, formType }) => {
+  const { animationIn } = useSelector((state: RootState) => state.animationIn);
 
   const overlayRef = useRef();
   const contentRef = useRef();

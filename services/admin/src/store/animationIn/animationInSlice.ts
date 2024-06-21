@@ -9,7 +9,7 @@ const initialState: TAnimationInState = {
 };
 
 export const animationInSlice = createSlice({
-  name: 'animationInSlice',
+  name: 'animationIn',
   initialState,
   reducers: {
     setAnimationIn(state, action: PayloadAction<boolean>) {

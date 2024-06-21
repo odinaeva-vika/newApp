@@ -3,13 +3,15 @@ import animatedModalSlice from './animatedModal/animatedModalSlice';
 import animationInSlice from './animationIn/animationInSlice';
 import authUserSlice from './authUser/authUserSlice';
 import formSlice from './form/formSlice';
+import homePageSlice from './homePage/homePageSlice';
 
 export const store = configureStore({
   reducer: {
     form: formSlice,
-    animatedModalSlice: animatedModalSlice,
-    animationInSlice: animationInSlice,
+    animatedModal: animatedModalSlice,
+    animationIn: animationInSlice,
     authUser: authUserSlice,
+    homePage: homePageSlice,
   },
 });
 

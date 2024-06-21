@@ -1,4 +1,4 @@
-import { TAnimatedModal } from '@/interfaces';
+import { ModalType } from '@/interfaces';
 import { setMounted } from '@/store/animatedModal/animatedModalSlice';
 import { RootState } from '@/store/store';
 import { useEffect } from 'react';
@@ -6,9 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Portal } from '../../../helpers/Portal';
 import { LayoutModal } from '../LayoutModal';
 
-export const AnimatedModal: React.FC<TAnimatedModal> = ({ isOpen, onClose, formType }) => {
+type TAnimatedModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  formType: ModalType;
+};
+
+export const AnimatedModal: React.FC<TAnimatedModalProps> = ({ isOpen, onClose, formType }) => {
   const dispatch = useDispatch();
-  const { mounted } = useSelector((state: RootState) => state.animatedModalSlice);
+  const { mounted } = useSelector((state: RootState) => state.animatedModal);
 
   useEffect(() => {
     if (isOpen) {

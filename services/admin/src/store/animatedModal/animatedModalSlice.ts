@@ -9,7 +9,7 @@ const initialState: TFormState = {
 };
 
 export const animatedModalSlice = createSlice({
-  name: 'animatedModalSlice',
+  name: 'animatedModal',
   initialState,
   reducers: {
     setMounted(state, action: PayloadAction<boolean>) {
